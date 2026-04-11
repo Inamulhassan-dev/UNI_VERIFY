@@ -1,0 +1,59 @@
+# ══════════════════════════════════════════════
+#  UNI-VERIFY .gitignore
+# ══════════════════════════════════════════════
+
+# ── Python ──
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+*.egg
+
+# ── Node.js ──
+node_modules/
+.next/
+out/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ── Database & Uploads ──
+*.db
+*.sqlite3
+backend/uploads/
+backend/data_warehouse/
+
+# ── Environment Variables ──
+.env
+.env.local
+.env.*.local
+
+# ── IDE & Editors ──
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ── OS Files ──
+desktop.ini
+*.lnk
+
+# ── Old Transfer Files ──
+UNI_VERIFY_READY_FOR_TRANSFER/
+README_FIRST.txt
+transfer_guide.md
+
+# ── Misc ──
+*.log
+*.tmp
+*.bak
+.gemini/
