@@ -1,0 +1,426 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║                    UNI-VERIFY INSTALLATION GUIDE                             ║
+║              Project Originality Validation Portal                           ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+📋 TABLE OF CONTENTS
+═══════════════════════════════════════════════════════════════════════════════
+
+1. System Requirements
+2. Pre-Installation Steps
+3. Installation Process
+4. First-Time Setup
+5. Starting the Application
+6. Stopping the Application
+7. Admin Login
+8. Troubleshooting
+9. Support Information
+
+═══════════════════════════════════════════════════════════════════════════════
+
+
+1️⃣ SYSTEM REQUIREMENTS
+═══════════════════════════════════════════════════════════════════════════════
+
+Operating System:
+  ✓ Windows 10 or higher (64-bit)
+
+Hardware:
+  ✓ Minimum 4 GB RAM (8 GB recommended)
+  ✓ 2 GB free disk space (5 GB recommended)
+  ✓ Dual-core processor (Quad-core recommended)
+
+Software Prerequisites:
+  ✓ Python 3.8 or higher
+  ✓ Node.js 18 or higher
+  ✓ Internet connection (for initial setup only)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+
+2️⃣ PRE-INSTALLATION STEPS
+═══════════════════════════════════════════════════════════════════════════════
+
+STEP 1: Install Python
+───────────────────────────────────────────────────────────────────────────────
+1. Download Python from: https://www.python.org/downloads/
+2. Run the installer
+3. ⚠️ IMPORTANT: Check the box "Add Python to PATH"
+4. Click "Install Now"
+5. Wait for installation to complete
+6. Verify installation:
+   - Open Command Prompt (cmd)
+   - Type: python --version
+   - You should see: Python 3.x.x
+
+
+STEP 2: Install Node.js
+───────────────────────────────────────────────────────────────────────────────
+1. Download Node.js from: https://nodejs.org/
+2. Download the LTS (Long Term Support) version
+3. Run the installer
+4. Accept default settings and click "Next" through all steps
+5. Wait for installation to complete
+6. Verify installation:
+   - Open Command Prompt (cmd)
+   - Type: node --version
+   - You should see: v18.x.x or higher
+   - Type: npm --version
+   - You should see: 9.x.x or higher
+
+═══════════════════════════════════════════════════════════════════════════════
+
+
+3️⃣ INSTALLATION PROCESS
+═══════════════════════════════════════════════════════════════════════════════
+
+STEP 1: Extract Files
+───────────────────────────────────────────────────────────────────────────────
+1. Locate the UNI_VERIFY.zip file
+2. Right-click on the ZIP file
+3. Select "Extract All..."
+4. Choose destination folder:
+   - Desktop (recommended for easy access)
+   - USB Drive (for portable installation)
+   - Any other location with write permissions
+5. Click "Extract"
+6. Wait for extraction to complete
+
+
+STEP 2: Verify Extracted Files
+───────────────────────────────────────────────────────────────────────────────
+After extraction, you should see the following structure:
+
+UNI_VERIFY/
+  ├── backend/                    (Backend server files)
+  ├── frontend/                   (Frontend application files)
+  ├── SETUP_FIRST_TIME.bat       (⭐ Setup script)
+  ├── START.bat                  (▶️ Start script)
+  ├── STOP.bat                   (⏹️ Stop script)
+  ├── README.md                  (Documentation)
+  └── INSTALLATION_GUIDE.txt     (This file)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+
+4️⃣ FIRST-TIME SETUP
+═══════════════════════════════════════════════════════════════════════════════
+
+⚠️ IMPORTANT: This step is REQUIRED before first use!
+
+STEP 1: Run Setup Script
+───────────────────────────────────────────────────────────────────────────────
+1. Navigate to the extracted UNI_VERIFY folder
+2. Find the file: SETUP_FIRST_TIME.bat
+3. Double-click SETUP_FIRST_TIME.bat
+4. A command window will open
+
+
+STEP 2: Wait for Installation
+───────────────────────────────────────────────────────────────────────────────
+The setup will perform the following steps:
+
+[1/6] Checking prerequisites...
+      - Verifying Python installation
+      - Verifying Node.js installation
+      - Verifying npm installation
+
+[2/6] Creating required directories...
+      - Creating uploads folder
+      - Creating data_warehouse folder
+
+[3/6] Setting up Python backend...
+      - Creating virtual environment
+      - Installing Python packages
+      ⏱️ This may take 3-5 minutes
+
+[4/6] Setting up Next.js frontend...
+      - Installing Node.js packages
+      ⏱️ This may take 3-5 minutes
+
+[5/6] Initializing database...
+      - Creating SQLite database
+      - Setting up tables
+
+[6/6] Creating admin account...
+      - Creating default admin user
+      - Email: admin@univerify.com
+      - Password: admin123
+
+
+STEP 3: Setup Complete
+───────────────────────────────────────────────────────────────────────────────
+When you see this message, setup is complete:
+
+  ╔══════════════════════════════════════════════════════════════╗
+  ║              ✅ SETUP COMPLETED SUCCESSFULLY!                ║
+  ╚══════════════════════════════════════════════════════════════╝
+
+Press any key to close the window.
+
+⏱️ Total setup time: 5-10 minutes (depending on internet speed)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+
+5️⃣ STARTING THE APPLICATION
+═══════════════════════════════════════════════════════════════════════════════
+
+STEP 1: Launch Application
+───────────────────────────────────────────────────────────────────────────────
+1. Navigate to the UNI_VERIFY folder
+2. Find the file: START.bat
+3. Double-click START.bat
+
+
+STEP 2: Wait for Services to Start
+───────────────────────────────────────────────────────────────────────────────
+Two terminal windows will open:
+
+Window 1 (Green): Backend Server
+  - Running on http://localhost:8000
+  - Shows API logs and requests
+
+Window 2 (Purple): Frontend Server
+  - Running on http://localhost:3000
+  - Shows frontend compilation logs
+
+⚠️ DO NOT CLOSE THESE WINDOWS while using the application!
+
+
+STEP 3: Browser Opens Automatically
+───────────────────────────────────────────────────────────────────────────────
+- Your default browser will open automatically
+- URL: http://localhost:3000
+- You will see the UNI-VERIFY login page
+
+If browser doesn't open automatically:
+  - Manually open your browser
+  - Go to: http://localhost:3000
+
+═══════════════════════════════════════════════════════════════════════════════
+
+
+6️⃣ STOPPING THE APPLICATION
+═══════════════════════════════════════════════════════════════════════════════
+
+METHOD 1: Using STOP.bat (Recommended)
+───────────────────────────────────────────────────────────────────────────────
+1. Navigate to the UNI_VERIFY folder
+2. Double-click STOP.bat
+3. All services will stop automatically
+4. Terminal windows will close
+
+
+METHOD 2: Manual Stop
+───────────────────────────────────────────────────────────────────────────────
+1. Close the green terminal window (Backend)
+2. Close the purple terminal window (Frontend)
+3. Press Ctrl+C in each window if needed
+
+═══════════════════════════════════════════════════════════════════════════════
+
+
+7️⃣ ADMIN LOGIN
+═══════════════════════════════════════════════════════════════════════════════
+
+Default Admin Credentials:
+───────────────────────────────────────────────────────────────────────────────
+Email:    admin@univerify.com
+Password: admin123
+
+
+Login Steps:
+───────────────────────────────────────────────────────────────────────────────
+1. Open http://localhost:3000 in your browser
+2. Click "Login" button
+3. Enter admin email: admin@univerify.com
+4. Enter admin password: admin123
+5. Click "Login"
+6. You will be redirected to the Admin Dashboard
+
+
+Admin Features:
+───────────────────────────────────────────────────────────────────────────────
+✓ View all student submissions
+✓ Approve or reject projects
+✓ Manage data warehouse
+✓ View system statistics
+✓ Manage users
+
+
+Student Registration:
+───────────────────────────────────────────────────────────────────────────────
+Students can register their own accounts:
+1. Click "Register" on the login page
+2. Fill in details (name, email, roll number, department, etc.)
+3. Create password
+4. Submit registration
+5. Login with new credentials
+
+═══════════════════════════════════════════════════════════════════════════════
+
+
+8️⃣ TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════════════════════
+
+PROBLEM: "Python not found" during setup
+───────────────────────────────────────────────────────────────────────────────
+SOLUTION:
+  1. Install Python from https://www.python.org/downloads/
+  2. Make sure to check "Add Python to PATH" during installation
+  3. Restart your computer
+  4. Run SETUP_FIRST_TIME.bat again
+
+
+PROBLEM: "Node.js not found" during setup
+───────────────────────────────────────────────────────────────────────────────
+SOLUTION:
+  1. Install Node.js from https://nodejs.org/
+  2. Choose the LTS version
+  3. Restart your computer
+  4. Run SETUP_FIRST_TIME.bat again
+
+
+PROBLEM: Setup fails during package installation
+───────────────────────────────────────────────────────────────────────────────
+SOLUTION:
+  1. Check your internet connection
+  2. Try running as Administrator:
+     - Right-click SETUP_FIRST_TIME.bat
+     - Select "Run as administrator"
+  3. If still fails, delete these folders and try again:
+     - backend\.venv
+     - frontend\node_modules
+
+
+PROBLEM: "Failed to fetch" error when logging in
+───────────────────────────────────────────────────────────────────────────────
+SOLUTION:
+  1. Make sure both terminal windows are open and running
+  2. Check if backend shows: "Uvicorn running on http://0.0.0.0:8000"
+  3. Check if frontend shows: "Ready in X seconds"
+  4. If not, run STOP.bat then START.bat again
+
+
+PROBLEM: Port already in use
+───────────────────────────────────────────────────────────────────────────────
+SOLUTION:
+  1. Run STOP.bat to kill existing processes
+  2. If that doesn't work, restart your computer
+  3. Then run START.bat again
+
+
+PROBLEM: Browser doesn't open automatically
+───────────────────────────────────────────────────────────────────────────────
+SOLUTION:
+  1. Manually open your browser
+  2. Go to: http://localhost:3000
+
+
+PROBLEM: Can't login with admin credentials
+───────────────────────────────────────────────────────────────────────────────
+SOLUTION:
+  1. Make sure you're using the correct credentials:
+     Email: admin@univerify.com
+     Password: admin123
+  2. Check if backend is running (green terminal window)
+  3. Try recreating admin account:
+     - Open Command Prompt
+     - Navigate to backend folder
+     - Run: .venv\Scripts\activate
+     - Run: python create_admin.py
+
+
+PROBLEM: Application is slow or unresponsive
+───────────────────────────────────────────────────────────────────────────────
+SOLUTION:
+  1. Check your system resources (RAM, CPU)
+  2. Close other applications
+  3. Restart the application (STOP.bat then START.bat)
+  4. Check if antivirus is blocking the application
+
+═══════════════════════════════════════════════════════════════════════════════
+
+
+9️⃣ SUPPORT INFORMATION
+═══════════════════════════════════════════════════════════════════════════════
+
+Access URLs:
+───────────────────────────────────────────────────────────────────────────────
+Frontend:         http://localhost:3000
+Backend API:      http://localhost:8000
+API Docs:         http://localhost:8000/docs
+Health Check:     http://localhost:8000/api/health
+
+
+File Locations:
+───────────────────────────────────────────────────────────────────────────────
+Database:         backend/uni_verify.db
+Uploads:          backend/uploads/
+Data Warehouse:   backend/data_warehouse/
+Logs:             Check terminal windows
+
+
+Supported File Formats:
+───────────────────────────────────────────────────────────────────────────────
+✓ PDF (.pdf)
+✓ Microsoft Word (.docx)
+✓ Plain Text (.txt)
+✓ PowerPoint (.pptx)
+
+
+System Limits:
+───────────────────────────────────────────────────────────────────────────────
+Maximum file size:     50 MB
+Minimum word count:    100 words
+Maximum projects:      Unlimited
+
+
+Quick Commands:
+───────────────────────────────────────────────────────────────────────────────
+First-time setup:      Double-click SETUP_FIRST_TIME.bat
+Start application:     Double-click START.bat
+Stop application:      Double-click STOP.bat
+Admin login:           admin@univerify.com / admin123
+
+═══════════════════════════════════════════════════════════════════════════════
+
+
+📞 NEED HELP?
+═══════════════════════════════════════════════════════════════════════════════
+
+1. Read the README.md file for detailed documentation
+2. Check the Troubleshooting section above
+3. Review error messages in terminal windows
+4. Check API documentation at http://localhost:8000/docs
+
+═══════════════════════════════════════════════════════════════════════════════
+
+
+✅ INSTALLATION CHECKLIST
+═══════════════════════════════════════════════════════════════════════════════
+
+Before using UNI-VERIFY, make sure you have completed:
+
+□ Installed Python 3.8 or higher
+□ Installed Node.js 18 or higher
+□ Extracted UNI_VERIFY.zip to a folder
+□ Run SETUP_FIRST_TIME.bat successfully
+□ Seen "Setup Completed Successfully" message
+□ Run START.bat
+□ Seen both terminal windows open (green and purple)
+□ Browser opened to http://localhost:3000
+□ Successfully logged in with admin credentials
+
+═══════════════════════════════════════════════════════════════════════════════
+
+
+🎓 Built for Academic Excellence at St. Philomena's College
+
+Version: 1.0.0
+Last Updated: 2026
+
+═══════════════════════════════════════════════════════════════════════════════

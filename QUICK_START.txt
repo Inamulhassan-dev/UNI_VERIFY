@@ -1,0 +1,178 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║                         🚀 QUICK START GUIDE                                 ║
+║                              UNI-VERIFY                                      ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+
+📋 3-STEP INSTALLATION
+═══════════════════════════════════════════════════════════════════════════════
+
+STEP 1: Install Prerequisites (One-time only)
+───────────────────────────────────────────────────────────────────────────────
+
+  🐍 Python 3.8+
+     Download: https://www.python.org/downloads/
+     ⚠️ Check "Add Python to PATH" during installation!
+
+  📦 Node.js 18+
+     Download: https://nodejs.org/
+     Choose LTS version
+
+
+STEP 2: Extract & Setup (One-time only)
+───────────────────────────────────────────────────────────────────────────────
+
+  1. Extract UNI_VERIFY.zip to Desktop or USB drive
+  
+  2. Double-click: SETUP_FIRST_TIME.bat
+  
+  3. Wait 5-10 minutes for installation
+  
+  4. See "Setup Completed Successfully" ✅
+
+
+STEP 3: Start Using
+───────────────────────────────────────────────────────────────────────────────
+
+  1. Double-click: START.bat
+  
+  2. Browser opens automatically
+  
+  3. Login with:
+     📧 Email: admin@univerify.com
+     🔑 Password: admin123
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+
+⚡ DAILY USAGE
+═══════════════════════════════════════════════════════════════════════════════
+
+  ▶️  START APPLICATION
+      Double-click: START.bat
+      Wait for browser to open
+      
+  ⏹️  STOP APPLICATION
+      Double-click: STOP.bat
+      All services stop automatically
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+
+🎯 WHAT EACH FILE DOES
+═══════════════════════════════════════════════════════════════════════════════
+
+  📄 SETUP_FIRST_TIME.bat
+     ➜ Run ONCE after extracting
+     ➜ Installs all dependencies
+     ➜ Creates admin account
+     ➜ Takes 5-10 minutes
+
+  📄 START.bat
+     ➜ Starts the application
+     ➜ Opens browser automatically
+     ➜ Run this every time you want to use the app
+
+  📄 STOP.bat
+     ➜ Stops the application
+     ➜ Closes all services
+     ➜ Run this when you're done
+
+  📄 README.md
+     ➜ Full documentation
+     ➜ Features and usage guide
+
+  📄 INSTALLATION_GUIDE.txt
+     ➜ Detailed installation steps
+     ➜ Troubleshooting help
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+
+🔐 DEFAULT LOGIN
+═══════════════════════════════════════════════════════════════════════════════
+
+  Admin Account:
+  ──────────────────────────────────────────────────────────────────────────
+  Email:    admin@univerify.com
+  Password: admin123
+  ──────────────────────────────────────────────────────────────────────────
+
+  Students can register their own accounts from the Register page.
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+
+❓ TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════════════════════
+
+  PROBLEM: "Python not found"
+  ──────────────────────────────────────────────────────────────────────────
+  ✅ Install Python from python.org
+  ✅ Check "Add Python to PATH" during installation
+  ✅ Restart computer and try again
+
+
+  PROBLEM: "Node.js not found"
+  ──────────────────────────────────────────────────────────────────────────
+  ✅ Install Node.js from nodejs.org
+  ✅ Restart computer and try again
+
+
+  PROBLEM: "Failed to fetch" when logging in
+  ──────────────────────────────────────────────────────────────────────────
+  ✅ Make sure both terminal windows are open
+  ✅ Run STOP.bat then START.bat again
+
+
+  PROBLEM: Setup fails
+  ──────────────────────────────────────────────────────────────────────────
+  ✅ Check internet connection
+  ✅ Right-click SETUP_FIRST_TIME.bat → "Run as administrator"
+  ✅ Delete backend\.venv and frontend\node_modules folders, try again
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+
+📞 NEED MORE HELP?
+═══════════════════════════════════════════════════════════════════════════════
+
+  📖 Read INSTALLATION_GUIDE.txt for detailed instructions
+  📖 Read README.md for full documentation
+  🌐 Visit http://localhost:8000/docs for API documentation
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+
+✅ CHECKLIST
+═══════════════════════════════════════════════════════════════════════════════
+
+  Before first use:
+  □ Python installed
+  □ Node.js installed
+  □ Extracted ZIP file
+  □ Run SETUP_FIRST_TIME.bat
+  □ Saw "Setup Completed Successfully"
+
+  Every time you use:
+  □ Double-click START.bat
+  □ Wait for browser to open
+  □ Login with admin credentials
+  □ When done, run STOP.bat
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+
+🎓 UNI-VERIFY - St. Philomena's College
+   Project Originality Validation Portal
+
+═══════════════════════════════════════════════════════════════════════════════
