@@ -1,5 +1,4 @@
 import numpy as np
-from sentence_transformers import SentenceTransformer
 from typing import List, Tuple, Optional
 import pickle
 
@@ -15,13 +14,14 @@ SIMILARITY_THRESHOLD = 0.70  # 70%
 _model = None
 
 
-def get_model() -> SentenceTransformer:
+def get_model():
     """
     Get or load the sentence transformer model.
     Uses lazy loading to avoid loading on import.
     """
     global _model
     if _model is None:
+        from sentence_transformers import SentenceTransformer  # noqa: PLC0415
         print(f"Loading ML model: {MODEL_NAME}...")
         _model = SentenceTransformer(MODEL_NAME)
         print("Model loaded successfully!")

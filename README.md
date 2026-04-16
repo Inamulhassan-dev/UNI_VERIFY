@@ -7,7 +7,7 @@
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](https://nodejs.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.109+-009688.svg)](https://fastapi.tiangolo.com/)
-[![Next.js](https://img.shields.io/badge/Next.js-14+-black.svg)](https://nextjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-16+-black.svg)](https://nextjs.org/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 **AI-Powered Academic Integrity System for St. Philomena's College**
@@ -194,14 +194,14 @@ Before installing UNI-VERIFY, ensure you have:
 
 ### Quick Start
 
-#### Option 1: Automated Setup (Recommended)
+#### Option 1: Automated Setup (Windows only)
 
 ```bash
 # 1. Clone the repository
 git clone https://github.com/Inamulhassan-dev/UNI_VERIFY.git
 cd UNI_VERIFY
 
-# 2. Run first-time setup (Windows)
+# 2. Run first-time setup
 SETUP_FIRST_TIME.bat
 
 # 3. Start the application
@@ -211,7 +211,7 @@ START.bat
 # Login with: admin@univerify.com / admin123
 ```
 
-#### Option 2: Manual Setup
+#### Option 2: Manual Setup (Windows / macOS / Linux)
 
 **Backend Setup:**
 ```bash
@@ -221,11 +221,18 @@ cd backend
 # Create virtual environment
 python -m venv .venv
 
-# Activate virtual environment (Windows)
+# Activate virtual environment
+# Windows:
 .venv\Scripts\activate
+# macOS / Linux:
+source .venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
+
+# Configure environment variables
+cp .env.example .env
+# Edit .env and set a strong SECRET_KEY before deploying to production!
 
 # Initialize database and create admin
 python -c "from database import init_db; init_db()"
@@ -237,8 +244,11 @@ python main.py
 
 **Frontend Setup:**
 ```bash
-# Navigate to frontend directory (in new terminal)
+# Navigate to frontend directory (in a new terminal)
 cd frontend
+
+# Configure environment variables (optional – defaults to localhost:8000)
+cp .env.example .env.local
 
 # Install dependencies
 npm install
@@ -260,7 +270,7 @@ For distributing UNI-VERIFY via USB drive:
 
 1. **Create Portable Package:**
    ```bash
-   # Run the packaging script
+   # Run the packaging script (Windows)
    CREATE_PORTABLE_ZIP.bat
    ```
 
@@ -440,7 +450,21 @@ status: "approved" | "rejected" | "pending"
 
 ### Environment Variables
 
-Create `.env` file in frontend directory:
+**Backend** – create `backend/.env` (copy from `backend/.env.example`):
+```env
+# Required – change to a long random string in production!
+SECRET_KEY=uni-verify-secret-key-change-in-production-2024
+
+# Optional – SQLite path (default: backend/uni_verify.db)
+# DATABASE_URL=sqlite:///./uni_verify.db
+```
+
+Generate a secure key with:
+```bash
+python -c "import secrets; print(secrets.token_hex(32))"
+```
+
+**Frontend** – create `frontend/.env.local` (copy from `frontend/.env.example`):
 ```env
 NEXT_PUBLIC_API_URL=http://localhost:8000
 ```
@@ -496,16 +520,24 @@ Edit `frontend/src/lib/api.ts` for:
 netstat -ano | findstr :8000
 taskkill /F /PID <PID>
 
-# Or simply run
+# macOS / Linux
+lsof -ti :8000 | xargs kill -9
+
+# Or on Windows simply run
 STOP.bat
 ```
 
 #### ❌ Module not found errors
 **Solution:**
 ```bash
-# Backend
+# Backend (Windows)
 cd backend
 .venv\Scripts\activate
+pip install -r requirements.txt
+
+# Backend (macOS / Linux)
+cd backend
+source .venv/bin/activate
 pip install -r requirements.txt
 
 # Frontend
