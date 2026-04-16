@@ -8,6 +8,13 @@ import os
 import json
 import uuid
 
+# Load .env file if present (no-op when the file is absent)
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
 from database import get_db, init_db, User, Project, Submission, WarehouseProject, UPLOAD_DIR
 from auth import (
     create_access_token, 
