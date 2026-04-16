@@ -4,15 +4,10 @@ Smoke tests for UNI-VERIFY backend.
 These tests are intentionally lightweight – they verify that the core modules
 import correctly, the database can be initialised, and password hashing/JWT
 signing work end-to-end without requiring a running server.
+
+Run from the backend directory:
+    python -m pytest tests/test_smoke.py -v
 """
-
-import sys
-import os
-
-# Make sure the backend package root is on the path regardless of how the
-# tests are invoked.
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-
 
 # ---------------------------------------------------------------------------
 # 1. Import smoke tests
